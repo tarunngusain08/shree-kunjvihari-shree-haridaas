@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Bell/notification icon shape -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28c-10.5,0 -19,8.5 -19,19v13l-4,4v2h46v-2l-4,-4V47c0,-10.5 -8.5,-19 -19,-19zM54,78c2.8,0 5,-2.2 5,-5h-10c0,2.8 2.2,5 5,5z"/>
+    <!-- Small dot at top of bell -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,24m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0"/>
+</vector>
