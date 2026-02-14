@@ -4,7 +4,7 @@
 
 ### Working Name
 
-**Shree Haridaas**
+**Shree Haridas**
 
 ### Vision
 
