@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Shree Haridaas</string>
+    <string name="app_name">Shree Haridas</string>
 
     <!-- Notification Channels -->
     <string name="channel_reminders_name">Reminders</string>
@@ -9,7 +9,7 @@
     <string name="channel_service_description">Keeps reminders running reliably</string>
 
     <!-- Main Screen -->
-    <string name="title_main">Shree Haridaas</string>
+    <string name="title_main">Shree Haridas</string>
     <string name="label_frequency">Interval (minutes)</string>
     <string name="label_frequency_hint">Enter minutes (1–1440)</string>
     <string name="label_sound">Notification Sound</string>
@@ -32,9 +32,6 @@
 
     <!-- Sound Picker -->
     <string name="title_sound_picker">Choose Sound</string>
-    <string name="sound_bell">Bell</string>
-    <string name="sound_chime">Chime</string>
-    <string name="sound_beep">Beep</string>
     <string name="label_default">Default</string>
     <string name="label_recorded">Recorded</string>
     <string name="label_custom_file">Custom file</string>
@@ -56,23 +53,8 @@
     <string name="label_tap_record">Tap the button to start recording</string>
     <string name="label_recording_saved">Recording ready! Preview or save it.</string>
 
-    <!-- Settings Screen -->
-    <string name="title_settings">Settings</string>
-    <string name="setting_dnd_title">Override Do Not Disturb</string>
-    <string name="setting_dnd_subtitle">Allow reminders to bypass Do Not Disturb mode</string>
-    <string name="setting_dnd_permission_needed">Permission needed to override DND. Tap to open settings.</string>
-    <string name="setting_vibration_title">Vibration</string>
-    <string name="setting_vibration_subtitle">Vibrate on each reminder</string>
-    <string name="setting_battery_title">Battery Optimization</string>
-    <string name="setting_battery_subtitle">Disable battery optimization for reliable reminders</string>
-    <string name="setting_battery_btn">Disable Battery Optimization</string>
-    <string name="setting_volume_title">Alarm Volume</string>
-    <string name="setting_volume_subtitle">Sound plays through the alarm volume channel</string>
-    <string name="setting_about_title">About</string>
-    <string name="setting_about_version">Version %s</string>
-
     <!-- Notifications -->
-    <string name="notification_reminder_title">Shree Haridaas</string>
+    <string name="notification_reminder_title">Shree Haridas</string>
     <string name="notification_reminder_body">Tap to open app</string>
     <string name="notification_service_title">Reminder Active</string>
     <string name="notification_service_body">Recurring reminders are running</string>
@@ -84,7 +66,6 @@
     <string name="permission_storage_rationale">Storage access is needed to select audio files</string>
     <string name="permission_alarm_rationale">Exact alarm permission is needed for precise reminder timing</string>
     <string name="permission_denied_settings">Permission denied. Tap to open settings.</string>
-    <string name="btn_open_settings">Open Settings</string>
     <string name="btn_cancel">Cancel</string>
     <string name="btn_ok">OK</string>
 </resources>
