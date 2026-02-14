@@ -1,1 +1,3 @@
-# shree-kunjvihari-shree-haridaas
+# Shree Haridas
+
+Recurring audio reminder Android app for spiritual practice.
