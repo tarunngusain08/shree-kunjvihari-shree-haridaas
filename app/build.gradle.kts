@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.shreeharidaas.app"
+    namespace = "com.shreeharidas.app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.shreeharidaas.app"
+        applicationId = "com.shreeharidas.app"
         minSdk = 30
         targetSdk = 34
         versionCode = 1
