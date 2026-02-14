@@ -70,6 +70,14 @@ class NotificationHelper(private val context: Context) {
     }
 
     /**
+     * Cancel any visible reminder notification in the drawer.
+     * Called when the user stops reminders.
+     */
+    fun cancelReminderNotification() {
+        notificationManager.cancel(Constants.NOTIFICATION_ID_REMINDER)
+    }
+
+    /**
      * Build the persistent foreground service notification.
      */
     fun buildServiceNotification(): Notification {
