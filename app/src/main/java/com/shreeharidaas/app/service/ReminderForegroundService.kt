@@ -164,18 +164,25 @@ class ReminderForegroundService : Service() {
 
     /**
      * ACTION_STOP: Cancel alarm, clear state, stop service.
+     * IMPORTANT: Must clear running state BEFORE calling stopSelf(),
+     * otherwise START_STICKY will restart the service and handleRestore()
+     * will see isRunning=true and resume notifications.
      */
     private fun handleStop() {
         Log.d(TAG, "Handling ACTION_STOP")
         alarmScheduler.cancelAlarm()
         soundPlayer.stop()
 
-        serviceScope.launch {
-            preferencesRepository.clearRunningState()
-        }
+        // Cancel any visible reminder notification in the drawer
+        notificationHelper.cancelReminderNotification()
 
-        stopForeground(STOP_FOREGROUND_REMOVE)
-        stopSelf()
+        serviceScope.launch {
+            // Clear state first, then stop the service
+            preferencesRepository.clearRunningState()
+            Log.d(TAG, "Running state cleared, stopping service")
+            stopForeground(STOP_FOREGROUND_REMOVE)
+            stopSelf()
+        }
     }
 
     /**
