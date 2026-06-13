@@ -7,6 +7,7 @@ object Constants {
     // Notification Channel IDs
     const val CHANNEL_ID_REMINDERS = "shreeharidas_reminders"
     const val CHANNEL_ID_SERVICE = "shreeharidas_service"
+    const val CHANNEL_ID_FESTIVALS = "shreeharidas_festivals"
 
     // Alarm Request Code (single fixed code to prevent duplicates)
     const val ALARM_REQUEST_CODE = 1001
@@ -14,11 +15,18 @@ object Constants {
     // Notification IDs
     const val NOTIFICATION_ID_REMINDER = 2001
     const val NOTIFICATION_ID_SERVICE = 2002
+    const val NOTIFICATION_ID_FESTIVAL_BASE = 60000
 
     // Foreground Service Actions
     const val ACTION_START = "com.shreeharidas.app.ACTION_START"
     const val ACTION_STOP = "com.shreeharidas.app.ACTION_STOP"
     const val ACTION_ALARM_TRIGGERED = "com.shreeharidas.app.ACTION_ALARM_TRIGGERED"
+    const val ACTION_FESTIVAL_NOTIFICATION =
+        "com.shreeharidas.app.ACTION_FESTIVAL_NOTIFICATION"
+
+    // Festival notifications use a distinct request-code range from reminders.
+    const val FESTIVAL_REQUEST_CODE_BASE = 50000
+    const val FESTIVAL_REQUEST_CODE_SPAN = 1_000_000
 
     // Default Values
     const val DEFAULT_FREQUENCY_MINUTES = 5

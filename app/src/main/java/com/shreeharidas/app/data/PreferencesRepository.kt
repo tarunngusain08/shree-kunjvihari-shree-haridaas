@@ -8,7 +8,9 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.core.stringSetPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.shreeharidas.app.festival.FestivalPreferences
 import com.shreeharidas.app.util.Constants
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
@@ -37,6 +39,16 @@ class PreferencesRepository(private val context: Context) {
         val END_HOUR = intPreferencesKey("end_hour")
         val END_MINUTE = intPreferencesKey("end_minute")
         val HAS_LAUNCHED_BEFORE = booleanPreferencesKey("has_launched_before")
+        val FESTIVAL_NOTIFICATIONS_ENABLED =
+            booleanPreferencesKey("festival_notifications_enabled")
+        val FESTIVAL_LAST_SYNC_EPOCH =
+            longPreferencesKey("festival_last_sync_epoch")
+        val FESTIVAL_LAST_SCHEDULE_EPOCH =
+            longPreferencesKey("festival_last_schedule_epoch")
+        val FESTIVAL_SCHEDULED_ALERT_KEYS =
+            stringSetPreferencesKey("festival_scheduled_alert_keys")
+        val FESTIVAL_FIRED_ALERT_KEYS =
+            stringSetPreferencesKey("festival_fired_alert_keys")
     }
 
     /** Reactive stream of all user preferences. */
@@ -63,9 +75,29 @@ class PreferencesRepository(private val context: Context) {
         )
     }
 
+    /** Festival-specific preferences stored in the same app DataStore file. */
+    val festivalPreferencesFlow: Flow<FestivalPreferences> =
+        context.dataStore.data.map { prefs ->
+            FestivalPreferences(
+                notificationsEnabled = prefs[Keys.FESTIVAL_NOTIFICATIONS_ENABLED]
+                    ?: true,
+                lastSyncEpochMillis = prefs[Keys.FESTIVAL_LAST_SYNC_EPOCH] ?: 0L,
+                lastScheduleEpochMillis = prefs[Keys.FESTIVAL_LAST_SCHEDULE_EPOCH]
+                    ?: 0L,
+                scheduledAlertKeys = prefs[Keys.FESTIVAL_SCHEDULED_ALERT_KEYS]
+                    ?: emptySet(),
+                firedAlertKeys = prefs[Keys.FESTIVAL_FIRED_ALERT_KEYS]
+                    ?: emptySet()
+            )
+        }
+
     /** Blocking read of current preferences (for use in BroadcastReceivers). */
     suspend fun getPreferences(): UserPreferences {
         return preferencesFlow.first()
+    }
+
+    suspend fun getFestivalPreferences(): FestivalPreferences {
+        return festivalPreferencesFlow.first()
     }
 
     /** Update frequency interval in minutes. */
@@ -101,6 +133,37 @@ class PreferencesRepository(private val context: Context) {
     suspend fun setDndOverride(enabled: Boolean) {
         context.dataStore.edit { prefs ->
             prefs[Keys.DND_OVERRIDE] = enabled
+        }
+    }
+
+    suspend fun setFestivalNotificationsEnabled(enabled: Boolean) {
+        context.dataStore.edit { prefs ->
+            prefs[Keys.FESTIVAL_NOTIFICATIONS_ENABLED] = enabled
+        }
+    }
+
+    suspend fun setFestivalLastSyncEpoch(timeMillis: Long) {
+        context.dataStore.edit { prefs ->
+            prefs[Keys.FESTIVAL_LAST_SYNC_EPOCH] = timeMillis
+        }
+    }
+
+    suspend fun setFestivalLastScheduleEpoch(timeMillis: Long) {
+        context.dataStore.edit { prefs ->
+            prefs[Keys.FESTIVAL_LAST_SCHEDULE_EPOCH] = timeMillis
+        }
+    }
+
+    suspend fun setFestivalScheduledAlertKeys(keys: Set<String>) {
+        context.dataStore.edit { prefs ->
+            prefs[Keys.FESTIVAL_SCHEDULED_ALERT_KEYS] = keys
+        }
+    }
+
+    suspend fun markFestivalAlertFired(key: String) {
+        context.dataStore.edit { prefs ->
+            val existing = prefs[Keys.FESTIVAL_FIRED_ALERT_KEYS] ?: emptySet()
+            prefs[Keys.FESTIVAL_FIRED_ALERT_KEYS] = existing + key
         }
     }
 

@@ -6,14 +6,14 @@ plugins {
 
 android {
     namespace = "com.shreeharidas.app"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.shreeharidas.app"
         minSdk = 30
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0.0"
+        targetSdk = 35
+        versionCode = 2
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,8 +45,8 @@ android {
 }
 
 dependencies {
-    // Compose BOM (2024.09.03 is compatible with compileSdk 34)
-    val composeBom = platform("androidx.compose:compose-bom:2024.09.03")
+    // Compose BOM (Updated for API 35 compatibility)
+    val composeBom = platform("androidx.compose:compose-bom:2024.10.01")
     implementation(composeBom)
 
     // Compose
@@ -58,7 +58,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-core")
 
     // Activity & Navigation
-    implementation("androidx.activity:activity-compose:1.9.2")
+    implementation("androidx.activity:activity-compose:1.9.3")
     implementation("androidx.navigation:navigation-compose:2.8.3")
 
     // Lifecycle
@@ -69,7 +69,11 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.1.1")
 
     // Core
-    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("androidx.core:core-ktx:1.15.0")
+
+    // Tests
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.json:json:20240303")
 
     // Debug
     debugImplementation("androidx.compose.ui:ui-tooling")

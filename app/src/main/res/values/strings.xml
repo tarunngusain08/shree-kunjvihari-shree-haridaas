@@ -7,6 +7,8 @@
     <string name="channel_reminders_description">Recurring audio reminder notifications</string>
     <string name="channel_service_name">Background Service</string>
     <string name="channel_service_description">Keeps reminders running reliably</string>
+    <string name="channel_festivals_name">Festival Reminders</string>
+    <string name="channel_festivals_description">Upcoming festival reminder notifications</string>
 
     <!-- Main Screen -->
     <string name="title_main">Shree Haridas</string>
@@ -29,6 +31,28 @@
     <string name="label_start_time">Start Time</string>
     <string name="label_end_time">End Time</string>
     <string name="label_active_window_hint">Reminders only play during this window</string>
+
+    <!-- Festival Calendar -->
+    <string name="title_festival_calendar">Festival Calendar</string>
+    <string name="subtitle_festival_calendar">Upcoming sampradaay festivals and reminders</string>
+    <string name="label_festival_notifications">Festival notifications</string>
+    <string name="label_festival_notifications_enabled">Enabled for reviewed festival dates</string>
+    <string name="label_festival_notifications_disabled">Disabled</string>
+    <string name="label_festival_data_unavailable">Festival data unavailable</string>
+    <string name="label_notification_permission_missing">Notification permission needed</string>
+    <string name="label_exact_alarm_permission_missing">Exact alarm permission needed</string>
+    <string name="label_festival_search">Search festivals</string>
+    <string name="label_upcoming_festivals">Upcoming</string>
+    <string name="title_festival_empty">Festival data unavailable</string>
+    <string name="label_festival_today">Today</string>
+    <string name="label_festival_tomorrow">Tomorrow</string>
+    <string name="label_festival_days_until">In %1$d days</string>
+    <string name="label_festival_past">Past</string>
+    <string name="label_festival_gregorian_date">Date: %1$s</string>
+    <string name="label_festival_source">Source: %1$s</string>
+    <string name="btn_previous_year">Previous</string>
+    <string name="btn_next_year">Next</string>
+    <string name="btn_back">Back</string>
 
     <!-- Sound Picker -->
     <string name="title_sound_picker">Choose Sound</string>
@@ -59,6 +83,9 @@
     <string name="notification_service_title">Reminder Active</string>
     <string name="notification_service_body">Recurring reminders are running</string>
     <string name="notification_fallback_body">Sound file missing, using default</string>
+    <string name="notification_festival_title">Upcoming Festival</string>
+    <string name="notification_festival_today_body">Today is %1$s</string>
+    <string name="notification_festival_upcoming_body">%1$s in %2$d days</string>
 
     <!-- Permissions -->
     <string name="permission_notification_rationale">Notification permission is needed to deliver reminders</string>

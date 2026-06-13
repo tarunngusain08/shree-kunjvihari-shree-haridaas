@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "source": "Images supplied for Shree Tatiya Sthan festival calendar",
+  "festivals": [
+    {
+      "id": "RADHASHTAMI",
+      "name": "श्रीराधाष्टमी महोत्सव",
+      "month": "BHADRAPAD",
+      "paksha": "SHUKLA",
+      "tithi": 8,
+      "specialType": null
+    },
+    {
+      "id": "DUSSEHRA_UTSAV",
+      "name": "दशहरा उत्सव",
+      "month": "ASHWIN",
+      "paksha": "SHUKLA",
+      "tithi": 10,
+      "specialType": null
+    },
+    {
+      "id": "SARASOTSAV",
+      "name": "सरसोत्सव",
+      "month": "ASHWIN",
+      "paksha": "SHUKLA",
+      "tithi": 15,
+      "specialType": null
+    },
+    {
+      "id": "ANANTKOOT_MAHOTSAV",
+      "name": "अनन्तकूट महोत्सव",
+      "month": "AGAHAN",
+      "paksha": "KRISHNA",
+      "tithi": 8,
+      "specialType": null
+    },
+    {
+      "id": "RANCHHODDAS_JI_UTSAV",
+      "name": "श्रीस्वामी रणछोड़दास जी महाराज का उत्सव",
+      "month": "AGAHAN",
+      "paksha": "KRISHNA",
+      "tithi": 12,
+      "specialType": null
+    },
+    {
+      "id": "BIHAR_PANCHAMI",
+      "name": "बिहार पंचमी महोत्सव",
+      "month": "AGAHAN",
+      "paksha": "SHUKLA",
+      "tithi": 5,
+      "specialType": null
+    },
+    {
+      "id": "JAGRAN_UTSAV",
+      "name": "जागरण उत्सव",
+      "month": "MAGH",
+      "paksha": "KRISHNA",
+      "tithi": 11,
+      "specialType": null
+    },
+    {
+      "id": "HARIPRASAD_DEVJI_PRAKATYOTSAV",
+      "name": "श्रीस्वामी हरिप्रसाद देवजी प्राकट्योत्सव",
+      "month": "MAGH",
+      "paksha": "SHUKLA",
+      "tithi": 5,
+      "specialType": "VASANT_PANCHAMI"
+    },
+    {
+      "id": "HOLI_MAHOTSAV",
+      "name": "श्रीबिहारी-बिहारिन जू की होली महोत्सव",
+      "month": "PHALGUN",
+      "paksha": "SHUKLA",
+      "tithi": 15,
+      "specialType": "HOLI_PURNIMA"
+    },
+    {
+      "id": "RADHACHARANDAS_JI_PRAKATYOTSAV",
+      "name": "श्रीस्वामी राधाचरणदासजी महाराज का प्राकट्योत्सव",
+      "month": "CHAITRA",
+      "paksha": "KRISHNA",
+      "tithi": 11,
+      "specialType": null
+    },
+    {
+      "id": "PHOOL_DOL_EKADASHI",
+      "name": "फूल-डोल एकादशी",
+      "month": "CHAITRA",
+      "paksha": "SHUKLA",
+      "tithi": 11,
+      "specialType": null
+    },
+    {
+      "id": "AKSHAY_TRITIYA_CHARAN_DARSHAN",
+      "name": "अक्षय तृतीया चरण दर्शन महोत्सव",
+      "month": "VAISHAKH",
+      "paksha": "SHUKLA",
+      "tithi": 3,
+      "specialType": "AKSHAYA_TRITIYA"
+    },
+    {
+      "id": "NAVALHARIDEVJI_PRAKATYOTSAV",
+      "name": "श्रीस्वामी नवलहरिदेवजी महाराज का प्राकट्योत्सव",
+      "month": "JYESHTHA",
+      "paksha": "KRISHNA",
+      "tithi": 2,
+      "specialType": null
+    },
+    {
+      "id": "RADHAPRASAD_DEVJI_UTSAV",
+      "name": "श्रीस्वामी राधाप्रसाद देवजू महाराज का उत्सव",
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 4,
+      "specialType": null
+    },
+    {
+      "id": "RADHASHARAN_DEVJI_UTSAV",
+      "name": "श्रीस्वामी राधाशरण देवजू महाराज का उत्सव",
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 6,
+      "specialType": null
+    },
+    {
+      "id": "NAVALDAS_JI_UTSAV",
+      "name": "श्रीस्वामी नवलदास जी महाराज का उत्सव",
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 9,
+      "specialType": null
+    },
+    {
+      "id": "MOHINI_NIKUNJ_TATIYA_STHAN_UTSAV",
+      "name": "मोहिनी निकुँज अनमोल श्रीटटिया स्थान उत्सव",
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 11,
+      "specialType": null
+    },
+    {
+      "id": "VARTAMAN_VIRAJMAN_GADDI_MAHOTSAV",
+      "name": "वर्तमान विराजमान श्रीस्वामी राधाबिहारीदासजी महाराज का गद्दी महोत्सव",
+      "month": "ASHADH",
+      "paksha": "KRISHNA",
+      "tithi": 10,
+      "specialType": null
+    },
+    {
+      "id": "GURU_PURNIMA_PAVAS_MAHOTSAV",
+      "name": "श्रीगुरुपूर्णिमा : पावस महोत्सव",
+      "month": "ASHADH",
+      "paksha": "SHUKLA",
+      "tithi": 15,
+      "specialType": "GURU_PURNIMA"
+    },
+    {
+      "id": "BIHARINIDEVJI_JHULANOTSAV",
+      "name": "श्रीस्वामी बिहारीनिदेवजू महाराज का प्राकट्योत्सव एवं झूलनोत्सव",
+      "month": "SHRAVAN",
+      "paksha": "SHUKLA",
+      "tithi": 3,
+      "specialType": null
+    }
+  ]
+}

@@ -11,23 +11,37 @@ import android.provider.Settings
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.shreeharidas.app.festival.notification.FestivalNotificationScheduler
 import com.shreeharidas.app.navigation.AppNavigation
 import com.shreeharidas.app.ui.theme.ShreeHaridasTheme
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 
 /**
  * Single activity that hosts the Compose navigation graph.
  * Requests essential permissions upfront on launch.
  */
 class MainActivity : ComponentActivity() {
+    private val startupScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         requestEssentialPermissions()
+        resyncFestivalNotifications()
         setContent {
             ShreeHaridasTheme {
                 AppNavigation()
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        startupScope.cancel()
     }
 
     /**
@@ -54,6 +68,13 @@ class MainActivity : ComponentActivity() {
                 Uri.parse("package:$packageName")
             )
             startActivity(intent)
+        }
+    }
+
+    private fun resyncFestivalNotifications() {
+        startupScope.launch {
+            FestivalNotificationScheduler(applicationContext)
+                .resyncUpcomingNotifications()
         }
     }
 }
