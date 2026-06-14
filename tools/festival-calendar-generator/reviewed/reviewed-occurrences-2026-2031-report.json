@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-14T03:43:56.711843+00:00",
+  "source": "Drik Panchang Vrindavan",
+  "expectedStartYear": 2026,
+  "expectedEndYear": 2031,
+  "yearFiles": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031
+  ],
+  "occurrenceCount": 92,
+  "missingFestivalYears": [
+    {
+      "festivalId": "AKSHAY_TRITIYA_CHARAN_DARSHAN",
+      "year": 2026,
+      "month": "VAISHAKH",
+      "paksha": "SHUKLA",
+      "tithi": 3
+    },
+    {
+      "festivalId": "GURU_PURNIMA_PAVAS_MAHOTSAV",
+      "year": 2026,
+      "month": "ASHADH",
+      "paksha": "SHUKLA",
+      "tithi": 15
+    },
+    {
+      "festivalId": "HOLI_MAHOTSAV",
+      "year": 2026,
+      "month": "PHALGUN",
+      "paksha": "SHUKLA",
+      "tithi": 15
+    },
+    {
+      "festivalId": "MOHINI_NIKUNJ_TATIYA_STHAN_UTSAV",
+      "year": 2026,
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 11
+    },
+    {
+      "festivalId": "NAVALDAS_JI_UTSAV",
+      "year": 2026,
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 9
+    },
+    {
+      "festivalId": "RADHAPRASAD_DEVJI_UTSAV",
+      "year": 2026,
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 4
+    },
+    {
+      "festivalId": "RADHASHARAN_DEVJI_UTSAV",
+      "year": 2026,
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 6
+    },
+    {
+      "festivalId": "VARTAMAN_VIRAJMAN_GADDI_MAHOTSAV",
+      "year": 2026,
+      "month": "ASHADH",
+      "paksha": "KRISHNA",
+      "tithi": 10
+    },
+    {
+      "festivalId": "BIHARINIDEVJI_JHULANOTSAV",
+      "year": 2027,
+      "month": "SHRAVAN",
+      "paksha": "SHUKLA",
+      "tithi": 3
+    },
+    {
+      "festivalId": "HARIPRASAD_DEVJI_PRAKATYOTSAV",
+      "year": 2027,
+      "month": "MAGH",
+      "paksha": "SHUKLA",
+      "tithi": 5
+    },
+    {
+      "festivalId": "JAGRAN_UTSAV",
+      "year": 2027,
+      "month": "MAGH",
+      "paksha": "KRISHNA",
+      "tithi": 11
+    },
+    {
+      "festivalId": "PHOOL_DOL_EKADASHI",
+      "year": 2027,
+      "month": "CHAITRA",
+      "paksha": "SHUKLA",
+      "tithi": 11
+    },
+    {
+      "festivalId": "RADHACHARANDAS_JI_PRAKATYOTSAV",
+      "year": 2027,
+      "month": "CHAITRA",
+      "paksha": "KRISHNA",
+      "tithi": 11
+    },
+    {
+      "festivalId": "RADHASHARAN_DEVJI_UTSAV",
+      "year": 2027,
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 6
+    },
+    {
+      "festivalId": "HOLI_MAHOTSAV",
+      "year": 2028,
+      "month": "PHALGUN",
+      "paksha": "SHUKLA",
+      "tithi": 15
+    },
+    {
+      "festivalId": "PHOOL_DOL_EKADASHI",
+      "year": 2028,
+      "month": "CHAITRA",
+      "paksha": "SHUKLA",
+      "tithi": 11
+    },
+    {
+      "festivalId": "RADHASHARAN_DEVJI_UTSAV",
+      "year": 2028,
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 6
+    },
+    {
+      "festivalId": "RANCHHODDAS_JI_UTSAV",
+      "year": 2028,
+      "month": "AGAHAN",
+      "paksha": "KRISHNA",
+      "tithi": 12
+    },
+    {
+      "festivalId": "AKSHAY_TRITIYA_CHARAN_DARSHAN",
+      "year": 2029,
+      "month": "VAISHAKH",
+      "paksha": "SHUKLA",
+      "tithi": 3
+    },
+    {
+      "festivalId": "BIHAR_PANCHAMI",
+      "year": 2029,
+      "month": "AGAHAN",
+      "paksha": "SHUKLA",
+      "tithi": 5
+    },
+    {
+      "festivalId": "PHOOL_DOL_EKADASHI",
+      "year": 2029,
+      "month": "CHAITRA",
+      "paksha": "SHUKLA",
+      "tithi": 11
+    },
+    {
+      "festivalId": "RADHACHARANDAS_JI_PRAKATYOTSAV",
+      "year": 2029,
+      "month": "CHAITRA",
+      "paksha": "KRISHNA",
+      "tithi": 11
+    },
+    {
+      "festivalId": "RADHASHARAN_DEVJI_UTSAV",
+      "year": 2029,
+      "month": "JYESHTHA",
+      "paksha": "SHUKLA",
+      "tithi": 6
+    },
+    {
+      "festivalId": "RANCHHODDAS_JI_UTSAV",
+      "year": 2029,
+      "month": "AGAHAN",
+      "paksha": "KRISHNA",
+      "tithi": 12
+    },
+    {
+      "festivalId": "GURU_PURNIMA_PAVAS_MAHOTSAV",
+      "year": 2030,
+      "month": "ASHADH",
+      "paksha": "SHUKLA",
+      "tithi": 15
+    },
+    {
+      "festivalId": "HOLI_MAHOTSAV",
+      "year": 2030,
+      "month": "PHALGUN",
+      "paksha": "SHUKLA",
+      "tithi": 15
+    },
+    {
+      "festivalId": "HOLI_MAHOTSAV",
+      "year": 2031,
+      "month": "PHALGUN",
+      "paksha": "SHUKLA",
+      "tithi": 15
+    },
+    {
+      "festivalId": "NAVALHARIDEVJI_PRAKATYOTSAV",
+      "year": 2031,
+      "month": "JYESHTHA",
+      "paksha": "KRISHNA",
+      "tithi": 2
+    }
+  ],
+  "errors": []
+}
