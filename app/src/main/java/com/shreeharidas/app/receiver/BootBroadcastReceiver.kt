@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.util.Log
 import com.shreeharidas.app.data.PreferencesRepository
+import com.shreeharidas.app.festival.notification.FestivalNotificationScheduler
 import com.shreeharidas.app.service.AlarmScheduler
 import com.shreeharidas.app.service.ReminderForegroundService
 import kotlinx.coroutines.runBlocking
@@ -33,31 +34,38 @@ class BootBroadcastReceiver : BroadcastReceiver() {
 
         if (!prefs.isRunning) {
             Log.d(TAG, "No active reminder, nothing to restore")
-            return
-        }
-
-        Log.d(TAG, "Restoring active reminder (freq=${prefs.frequencyMinutes}min)")
-
-        val now = System.currentTimeMillis()
-        val nextTrigger = prefs.nextTriggerTime
-
-        if (nextTrigger > now) {
-            // Future trigger: schedule at the correct wall-clock time
-            Log.d(TAG, "Scheduling future alarm at $nextTrigger")
-            val alarmScheduler = AlarmScheduler(context)
-            runBlocking {
-                alarmScheduler.scheduleAlarm(
-                    nextTrigger,
-                    PreferencesRepository(context)
-                )
-            }
         } else {
-            // Missed trigger: fire immediately via service
-            Log.d(TAG, "Missed alarm trigger, firing immediately")
-            ReminderForegroundService.triggerAlarm(context)
+            Log.d(TAG, "Restoring active reminder (freq=${prefs.frequencyMinutes}min)")
+
+            val now = System.currentTimeMillis()
+            val nextTrigger = prefs.nextTriggerTime
+
+            if (nextTrigger > now) {
+                // Future trigger: schedule at the correct wall-clock time
+                Log.d(TAG, "Scheduling future alarm at $nextTrigger")
+                val alarmScheduler = AlarmScheduler(context)
+                runBlocking {
+                    alarmScheduler.scheduleAlarm(
+                        nextTrigger,
+                        PreferencesRepository(context)
+                    )
+                }
+            } else {
+                // Missed trigger: fire immediately via service
+                Log.d(TAG, "Missed alarm trigger, firing immediately")
+                ReminderForegroundService.triggerAlarm(context)
+            }
+
+            // Restart the foreground service for persistent notification
+            ReminderForegroundService.startService(context)
         }
 
-        // Restart the foreground service for persistent notification
-        ReminderForegroundService.startService(context)
+        runCatching {
+            runBlocking {
+                FestivalNotificationScheduler(context).resyncUpcomingNotifications()
+            }
+        }.onFailure {
+            Log.w(TAG, "Festival notification restore failed safely", it)
+        }
     }
 }

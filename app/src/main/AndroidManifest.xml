@@ -61,6 +61,10 @@
             android:name=".receiver.AlarmBroadcastReceiver"
             android:exported="false" />
 
+        <receiver
+            android:name=".festival.notification.FestivalNotificationReceiver"
+            android:exported="false" />
+
         <!-- Boot Broadcast Receiver -->
         <receiver
             android:name=".receiver.BootBroadcastReceiver"
@@ -70,7 +74,9 @@
             </intent-filter>
         </receiver>
 
-        <!-- Reminder Foreground Service -->
+        <!-- Reminder Foreground Service
+             Noticeable to user: persistent "Reminder Active" notification + audio playback at intervals.
+             Does not fit standard types (mediaPlayback, dataSync, etc.) — this is alarm-based scheduling. -->
         <service
             android:name=".service.ReminderForegroundService"
             android:exported="false"
@@ -78,7 +84,7 @@
             android:foregroundServiceType="specialUse">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="Recurring audio reminder that plays notification sounds at user-defined intervals" />
+                android:value="Displays persistent 'Reminder Active' notification and plays audio reminders at user-defined intervals for spiritual practice (japa, meditation). User sees the notification and hears sounds while app is in background." />
         </service>
 
     </application>

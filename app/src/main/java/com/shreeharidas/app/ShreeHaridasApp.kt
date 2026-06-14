@@ -44,7 +44,16 @@ class ShreeHaridasApp : Application() {
             enableVibration(false)
         }
 
+        val festivalChannel = NotificationChannel(
+            Constants.CHANNEL_ID_FESTIVALS,
+            getString(R.string.channel_festivals_name),
+            NotificationManager.IMPORTANCE_DEFAULT
+        ).apply {
+            description = getString(R.string.channel_festivals_description)
+        }
+
         notificationManager.createNotificationChannel(reminderChannel)
         notificationManager.createNotificationChannel(serviceChannel)
+        notificationManager.createNotificationChannel(festivalChannel)
     }
 }

@@ -65,6 +65,7 @@ import com.shreeharidas.app.util.PermissionUtils
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
+    onFestivalCalendarClick: () -> Unit = {},
     viewModel: MainViewModel = viewModel()
 ) {
     val context = LocalContext.current
@@ -190,6 +191,41 @@ fun MainScreen(
                 onEndTimeSet = viewModel::setEndTime,
                 formatTime = viewModel::formatTime
             )
+
+            Card(
+                onClick = onFestivalCalendarClick,
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant
+                )
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp)
+                ) {
+                    Icon(
+                        Icons.Default.Notifications,
+                        contentDescription = null,
+                        modifier = Modifier.size(32.dp),
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                    Spacer(modifier = Modifier.width(12.dp))
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = stringResource(R.string.title_festival_calendar),
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Medium
+                        )
+                        Text(
+                            text = stringResource(R.string.subtitle_festival_calendar),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+            }
 
             Spacer(modifier = Modifier.height(8.dp))
 

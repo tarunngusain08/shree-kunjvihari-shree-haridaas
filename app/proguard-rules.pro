@@ -9,4 +9,4 @@
 -dontwarn androidx.compose.**
 
 # Keep application class
--keep class com.shreeharidaas.app.ShreeHaridaasApp { *; }
+-keep class com.shreeharidas.app.ShreeHaridasApp { *; }
