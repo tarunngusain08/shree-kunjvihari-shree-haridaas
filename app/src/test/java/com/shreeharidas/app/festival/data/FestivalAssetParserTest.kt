@@ -159,6 +159,29 @@ class FestivalAssetParserTest {
         }
     }
 
+    @Test
+    fun bundledKeyFestivalGregorianDatesVaryAcrossYears() {
+        val occurrencesByFestival = loadBundledOccurrencesByFestival()
+        val expectedYears = (2026..2031).toList()
+
+        listOf(
+            "RADHASHTAMI",
+            "ANANTKOOT_MAHOTSAV",
+            "DUSSEHRA_UTSAV"
+        ).forEach { festivalId ->
+            val datesByYear = occurrencesByFestival.getValue(festivalId)
+            assertEquals(expectedYears, datesByYear.keys.sorted())
+
+            val monthDays = datesByYear.values
+                .map { date -> "${date.monthValue}-${date.dayOfMonth}" }
+                .toSet()
+            assertTrue(
+                "$festivalId Gregorian month/day should vary across reviewed years",
+                monthDays.size > 1
+            )
+        }
+    }
+
     private fun mainAssetsPath(): Path {
         val userDir = Paths.get(System.getProperty("user.dir"))
         val candidates = listOf(
@@ -171,5 +194,26 @@ class FestivalAssetParserTest {
 
     private fun readUtf8(path: Path): String {
         return String(Files.readAllBytes(path), Charsets.UTF_8)
+    }
+
+    private fun loadBundledOccurrencesByFestival(): Map<String, Map<Int, LocalDate>> {
+        val result = mutableMapOf<String, MutableMap<Int, LocalDate>>()
+        val occurrenceFiles = Files.list(mainAssetsPath().resolve("festival_occurrences")).use { stream ->
+            stream.iterator().asSequence()
+                .filter { path -> path.fileName.toString().matches(Regex("\\d{4}\\.json")) }
+                .toList()
+        }
+
+        occurrenceFiles.forEach { path ->
+            val root = JSONObject(readUtf8(path))
+            val occurrences = root.getJSONArray("occurrences")
+            for (index in 0 until occurrences.length()) {
+                val item = occurrences.getJSONObject(index)
+                val date = LocalDate.parse(item.getString("date"))
+                result.getOrPut(item.getString("festivalId")) { mutableMapOf() }[date.year] = date
+            }
+        }
+
+        return result
     }
 }
