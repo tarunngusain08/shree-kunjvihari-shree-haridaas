@@ -113,22 +113,6 @@ fun FestivalScreen(
                 }
             }
 
-            if (uiState.upcoming.isNotEmpty()) {
-                item {
-                    Text(
-                        text = stringResource(R.string.label_upcoming_festivals),
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-                items(uiState.upcoming) { item ->
-                    FestivalRow(
-                        item = item,
-                        onClick = { viewModel.selectItem(item) }
-                    )
-                }
-            }
-
             uiState.groups.forEach { group ->
                 item {
                     Text(
@@ -139,6 +123,23 @@ fun FestivalScreen(
                     )
                 }
                 items(group.items) { item ->
+                    FestivalRow(
+                        item = item,
+                        onClick = { viewModel.selectItem(item) }
+                    )
+                }
+            }
+
+            if (uiState.upcoming.isNotEmpty()) {
+                item {
+                    Text(
+                        text = stringResource(R.string.label_upcoming_festivals),
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Bold,
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
+                }
+                items(uiState.upcoming) { item ->
                     FestivalRow(
                         item = item,
                         onClick = { viewModel.selectItem(item) }
