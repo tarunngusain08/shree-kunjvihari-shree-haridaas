@@ -42,7 +42,7 @@
     <string name="label_notification_permission_missing">Notification permission needed</string>
     <string name="label_exact_alarm_permission_missing">Exact alarm permission needed</string>
     <string name="label_festival_search">Search festivals</string>
-    <string name="label_upcoming_festivals">Upcoming</string>
+    <string name="label_upcoming_festivals">Upcoming next 400 days</string>
     <string name="title_festival_empty">Festival data unavailable</string>
     <string name="label_festival_today">Today</string>
     <string name="label_festival_tomorrow">Tomorrow</string>
